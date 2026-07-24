@@ -73,5 +73,69 @@ Amazon ECS (Elastic Container Service) is a container orchestration service that
 
 
 
-In this assignment, EC2 was used in Part 1 to manually run Docker containers, while ECS with AWS Fargate was used in Part 2 to deploy the application in a managed environment connected to an Amazon RDS database.
+PART 3
+
+
+
+&#x20;Question 1: Compare EC2 and ECS Fargate
+
+
+
+
+
+Amazon EC2 provides virtual servers that users must configure, manage, and maintain. Users are responsible for installing software, applying updates, and securing the operating system. In contrast, Amazon ECS Fargate is a serverless container service where AWS manages the underlying infrastructure, allowing users to focus on running their applications.
+
+
+
+EC2 requires manual or Auto Scaling configuration, while ECS Fargate scales containers automatically. EC2 also incurs charges for running instances even when idle, whereas Fargate charges only for the resources used by running containers. Overall, ECS Fargate reduces maintenance effort and simplifies deployment compared to EC2.
+
+
+
+&#x20;Question 2
+
+
+
+Amazon RDS is preferred because it is a fully managed database service. AWS automatically performs backups, software updates, monitoring, and failure recovery. It also provides high availability, better security, and easier scaling. Running MySQL inside a Docker container requires the user to manage backups, updates, security, and database maintenance manually.
+
+
+
+Question 3
+
+
+
+1\. No need to manage or maintain servers.
+
+2\. Automatically scales containerized applications.
+
+3\. Integrates easily with AWS services such as Amazon RDS, CloudWatch, and IAM.
+
+
+
+&#x20;Question 4
+
+
+
+Amazon EC2 is a virtual server service used to host applications and run Docker containers. Amazon ECS is a container orchestration service that deploys and manages Docker containers. AWS Fargate is a serverless compute engine for ECS that allows containers to run without managing servers. Amazon RDS is a managed database service used to host the MySQL database. Security Groups act as virtual firewalls that control inbound and outbound network traffic. Docker is a platform for packaging applications and their dependencies into containers, while Docker Network enables communication between Docker containers, allowing the PHP application to connect to the MySQL database during the EC2 deployment.
+
+
+
+&#x20;Question 5
+
+
+
+In the EC2 deployment, the PHP application and the MySQL database were running as separate Docker containers on the same EC2 instance. They communicated through a Docker network using the MySQL container name as the database host.
+
+
+
+In the ECS deployment, the PHP application runs inside an ECS Fargate container while the MySQL database is hosted on Amazon RDS. The application connects to the RDS database using the RDS endpoint, database username, password, and database name provided through ECS environment variables.
+
+
+
+
+
+
+
+
+
+
 
